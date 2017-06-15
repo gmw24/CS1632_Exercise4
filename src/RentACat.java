@@ -78,7 +78,7 @@ public class RentACat {
 		}
 	}
 	
-	public void returnCat(int catId, int custId){
+	public void returnCat(int catId){
 		for(int i = 0; i < cats.size(); i++){
 			if(cats.get(i).getCatId() == catId){
 				cats.get(i).returnCat();

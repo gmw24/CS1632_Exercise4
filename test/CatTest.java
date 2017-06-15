@@ -1,15 +1,37 @@
-import org.junit.Test;
 import static org.junit.Assert.*;
 
-// This class doesn't really test anything - it's just here
-// to show you how to test multiple files with the TestRunner.
+import static org.mockito.Mockito.*;
+
+import org.junit.*;
 
 public class CatTest {
+	
+	Cat cat;
+	
+	@Before
+	public void setup() {
+		cat = new Cat(1, "Kitty", 100);
+	}
+	
+	//Test all values are initialized correctly through the toString method
+	@Test
+	public void testInit() {
+		assertEquals(cat.toString(), "Cat #1 : Kitty, $100/day.");
+	}
 
-    @Test
-    public void testShouldPass() {
-	int z = 2;
-	assertTrue(z == 2);
-    }
-    
+	//Test that when a cat is rented, it's renterId and associated availability is changed
+	@Test
+	public void testRentCat() {
+		cat.rentCat(100);
+		assertEquals(cat.getRenterId(), 100);
+		assertEquals(cat.isAvailable(), false);
+	}
+	
+	//Test that returning a cat resets it's renters id and makes it available again
+	@Test
+	public void testReturnCat() {
+		cat.returnCat();
+		assertEquals(cat.getRenterId(), -1);
+		assertEquals(cat.isAvailable(), true);
+	}
 }

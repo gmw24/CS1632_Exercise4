@@ -19,6 +19,9 @@ public class Cat {
 	}
 	
 	public void returnCat() {
+		if(renterId == -1) {
+			return;
+		}
 		renterId = -1;
 		availableToRent = true;
 	}

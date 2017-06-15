@@ -84,7 +84,6 @@ public class RentACatTest {
 		rentACat.addCustomer(mockCustomer);
 		rentACat.rentCat(1, 1);
 		verify(mockCat).rentCat(1);
-		assertEquals(mockCat.isAvailable(), false);
 	}
 	
 	//Tests renting an invalid cat to a customer
@@ -109,7 +108,7 @@ public class RentACatTest {
 		when(mockCat.getCatId()).thenReturn(1);
 		rentACat.addCat(mockCat);
 		rentACat.addCustomer(mockCustomer);
-		rentACat.returnCat(1, 1);
+		rentACat.returnCat(1);
 		verify(mockCat).returnCat();
 	}
 
@@ -122,7 +121,7 @@ public class RentACatTest {
 		when(mockCat.getCatId()).thenReturn(1);
 		rentACat.addCat(mockCat);
 		rentACat.addCustomer(mockCustomer);
-		rentACat.returnCat(2, 1);
+		rentACat.returnCat(2);
 		verify(mockCat, never()).returnCat();
 	}
 }

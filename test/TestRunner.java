@@ -12,7 +12,6 @@ public class TestRunner {
 	// ADD ANY MORE CLASSES YOU WISH TO TEST HERE
 	
 	classesToTest.add(CatTest.class);
-	//classesToTest.add(Customer.class);
 	classesToTest.add(RentACatTest.class);
 	
 	// For all test classes added, loop through and use JUnit
