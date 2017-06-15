@@ -1,0 +1,24 @@
+public class RentACatRunner{
+	public static void main (String args[]){
+		init();
+		Scanner in = new Scanner(System.in);
+		System.out.print("Enter an option [1, 2, 3, 4]: ");
+		int choice = in.nextInt();
+		
+		while(choice != 4 && choice < 4){
+			switch(choice){
+				case 1:
+					System.out.println(listCats(cats));
+				break;
+				case 2:
+				break;
+				case 3:
+				break;
+				default:
+				break;
+			}
+			System.out.print("Enter an option [1, 2, 3, 4]: ");
+		    choice = in.nextInt();
+		}
+	}
+}
