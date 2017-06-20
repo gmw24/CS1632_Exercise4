@@ -1,3 +1,5 @@
+//Created by Gabriel Wells
+//I had to create a separate RentACatRunner to allow the RentACat object to not be static
 import java.util.*;
 
 public class RentACatRunner{
